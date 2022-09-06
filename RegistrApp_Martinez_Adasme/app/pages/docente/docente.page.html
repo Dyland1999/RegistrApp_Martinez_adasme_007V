@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="micolor2"><!--Inicio de cabecera-->
+    <ion-title id="titulo2">Docente</ion-title><!--titulo-->
+    <ion-buttons  slot="start"><!--inicio clase boton-->
+      <ion-back-button defaultHref="/"
+        text="Atras"
+        color="light"
+        mode="ios"
+      ><!--Edicion de boton (default es para volver a inicio)-->
+      </ion-back-button><!--termino boton volver-->
+    </ion-buttons><!--cierre clase boton-->
+  </ion-toolbar><!--cierre de cabecera-->
+</ion-header>
+
+<ion-content id="fondo"  >
+<img src="assets/duoc-uc.jpg" class="ion-padding">
+  <form #formulario2="ngForm" (ngSubmit) ="onSubmit()">
+      <ion-item id="titulo">
+        <ion-label class="titulo" position="floating">Usuario: </ion-label>
+        <ion-input type="email" placeholder="Ingrese usuario docente valido"
+                   name="email" value="" [(ngModel)]= "usuariodoc.email"
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-item id="titulo">
+        <ion-label class="titulo" position="floating">Contraseña: </ion-label>
+        <ion-input type="password" placeholder="Ingrese su contraseña"
+                   name="password" value="" [(ngModel)]= "usuariodoc.password"
+                   required>
+        </ion-input>
+      </ion-item>
+
+   <ion-button [disabled] ="formulario2.invalid"
+            type="submit" expand="block" routerLink="/qr" color="warning">
+    Iniciar sesion
+    </ion-button>
+  </form>
+ 
+  <ion-label id="label" color="warning"routerLink="/olvcont">Olvidaste tu contraseña?</ion-label>
+
+</ion-content> 
+  

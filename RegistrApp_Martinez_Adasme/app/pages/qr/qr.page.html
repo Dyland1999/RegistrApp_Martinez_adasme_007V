@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="micolor2">
+   
+    <ion-title id="titulo2">Generar QR</ion-title>
+   <ion-button  class=titulo 
+                slot="end"
+                size="small"
+                color="warning"
+                href="/docente">cerrar<br>sesion   
+  </ion-button>
+  </ion-toolbar>
+</ion-header >
+
+
+<ion-content id="fondo" >
+  <ion-card id="card" >
+    <ion-card-header >
+      <ion-card-title id="titulo"> Bienvenido profesor<br> </ion-card-title>
+    </ion-card-header >
+    <ion-card-content >
+    
+      <img src="assets/descarga.png" class="ion-padding">
+
+      <ion-button  routerLink="/qr2" expand="block"size="default" color="warning" >
+      Generar QR
+      </ion-button>
+      <ion-button  expand="block"size="default" color="warning" >
+       Asistencia
+        </ion-button>
+    </ion-card-content>
+    
+  </ion-card>
+</ion-content>

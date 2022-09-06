@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="micolor2"><!--Inicio de cabecera-->
+    <ion-title id="titulo2">Recuperar<br>Contraseña</ion-title><!--titulo-->
+    <ion-buttons slot="start"><!--inicio clase boton-->
+      <ion-back-button defaultHref="/"
+        text="Atras"
+        color="light"
+        mode="ios"
+      ><!--Edicion de boton (default es para volver a inicio)-->
+      </ion-back-button><!--termino boton volver-->
+    </ion-buttons><!--cierre clase boton-->
+  </ion-toolbar><!--cierre de cabecera-->
+</ion-header>
+
+<ion-content id="fondo">
+  <img src="assets/rrr.jpg" class="ion-padding">
+  <form #contraseña="ngForm" (ngSubmit) ="onSubmit()">
+
+    <ion-item id="titulo">
+      <ion-label class="titulo" position="floating">Contraseña nueva: </ion-label>
+      <ion-input type="password" placeholder="Ingrese su contraseña"
+                 name="password" value="" [(ngModel)]= "contra.password"
+                 required>
+      </ion-input>
+    </ion-item>
+    
+
+    <ion-button (click)="Mensaje()" 
+  type="submit" color="warning" expand="block" routerLink="/inicio">
+    Registrar
+  </ion-button>
+  </form>
+</ion-content >
+
+

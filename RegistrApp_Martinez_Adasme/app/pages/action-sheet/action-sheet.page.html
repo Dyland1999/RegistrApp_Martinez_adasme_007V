@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="micolor2" > <!--Inicio de cabecera-->
+    <ion-title id="titulo2">Registrate</ion-title><!--titulo-->
+    <ion-buttons slot="start"><!--inicio clase boton-->
+      <ion-back-button defaultHref="/"
+        text="Atras"
+        color="light"
+        mode="ios"
+      ><!--Edicion de boton (default es para volver a inicio)-->
+      </ion-back-button><!--termino boton volver-->
+    </ion-buttons><!--cierre clase boton-->
+  </ion-toolbar><!--cierre de cabecera-->
+</ion-header>
+
+
+<ion-content id="fondo" >
+  <form #registro="ngForm" (ngSubmit) ="onSubmit()">
+  <img src="assets/rr.jpg" class="ion-padding">
+
+  <ion-item id="label">
+    <ion-label  position="floating">Nombre</ion-label>
+    <ion-input type="name" placeholder="Ingrese su nombre" name="name"
+               value="" [(ngModel)]= "registrousu.name" required>
+     </ion-input>
+  </ion-item>
+
+  <ion-item id="label">
+    <ion-label  position="floating">Correo</ion-label>
+     <ion-input type="email" placeholder="Ingrese su email" name="email"
+                 value="" [(ngModel)]= "registrousu.email" required
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"></ion-input>
+  </ion-item>
+
+  <ion-item id="label">
+    <ion-label  position="floating">Contraseña</ion-label>
+    <ion-input type="password" placeholder="Ingrese su contraseña" name="password"
+             value="" [(ngModel)]= "registrousu.password" required ></ion-input>
+  </ion-item>
+
+   <ion-item id="label">
+    <ion-label  position="floating" >Numero</ion-label>
+    <ion-input type="number" placeholder="Ingrese su numero(opcional)" name="number"
+             value="" [(ngModel)]= "registrousu.number"  ></ion-input>
+   </ion-item>  
+     
+     <ion-button [disabled] ="registro.invalid" (click)="Mensaje()" 
+                type="submit" color="warning" expand="block" routerLink="/inicio">
+      Registrar
+      </ion-button>
+              
+    </form>
+    
+
+</ion-content>
